@@ -64,34 +64,41 @@ def get_task(con, task_date: date, index: int) -> str:
 
 
 # why we need use here task_date: date parameter?
-def edit_task(con, index: int, new_task: str) -> None:
+def edit_task(con, task_date: date, index: int, new_task: str) -> None:
     """
     Update task in db.
-    :param con: str
+    :param task_date: date
     :param index: int
     :param new_task: str
     :return: None
     """
     with con.cursor() as cursor:
-        # task_id = cursor.execute("""SELECT tasks.id
-        #                             FROM valentyna.public.tasks, valentyna.public.dates
-        #                             WHERE tasks.dateid = dates.id
-        #                             AND tasks.id = {0}
-        #                             AND dates.taskdate = '{1}'""".format(index, date))
+        cursor.execute("""SELECT tasks.id
+                        FROM valentyna.public.tasks, valentyna.public.dates
+                        WHERE tasks.dateid = dates.id
+                        AND tasks.id = {0}
+                        AND dates.taskdate = '{1}'""".format(index, task_date))
+        task_id = cursor.fetchone()[0]
         cursor.execute("""UPDATE valentyna.public.tasks
                         SET taskname = '{0}'
-                        WHERE id = '{1}'""".format(new_task, index))
+                        WHERE id = '{1}'""".format(new_task, task_id))
     con.commit()
 
 
-# why we need use here task_date: date parameter?
-def delete_task(con, index: int) -> None:
+def delete_task(con, task_date: date, index: int) -> None:
     """
     Delete task in db.
+    :param task_date: date
     :param con: str
     :param index: int
     :return: None
     """
     with con.cursor() as cursor:
-        cursor.execute("""DELETE FROM valentyna.public.tasks WHERE id = {0}""".format(index))
-        con.commit()
+        cursor.execute("""SELECT tasks.id
+                        FROM valentyna.public.tasks, valentyna.public.dates
+                        WHERE tasks.dateid = dates.id
+                        AND tasks.id = {0}
+                        AND dates.taskdate = '{1}'""".format(index, task_date))
+        task_id = cursor.fetchone()[0]
+        cursor.execute("""DELETE FROM valentyna.public.tasks WHERE id = {0}""".format(task_id))
+    con.commit()

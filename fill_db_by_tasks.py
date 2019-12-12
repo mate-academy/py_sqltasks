@@ -17,10 +17,10 @@ if __name__ == "__main__":
             print(list_tasks(con, date(2020, 4, 1)))
 
             print(get_task(con, date(2020, 4, 1), 47))
-            edit_task(con, 47, 'Wake up slowly')
+            edit_task(con, date(2020, 4, 1), 47, 'Wake up slowly')
             print(get_task(con, date(2020, 4, 1), 47))
 
-            delete_task(con, 47)
+            delete_task(con, date(2020, 4, 1), 47)
             print(list_tasks(con, date(2020, 4, 1)))
 
             con.commit()
