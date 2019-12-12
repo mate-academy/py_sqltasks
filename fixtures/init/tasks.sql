@@ -1,0 +1,6 @@
+CREATE TABLE Tasks
+(
+    Id   SERIAL PRIMARY KEY,
+    DateID   INTEGER REFERENCES Dates(Id),
+    TaskName VARCHAR(255)
+);
