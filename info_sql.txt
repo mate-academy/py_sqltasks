@@ -1,0 +1,26 @@
+import psycopg2
+
+con = psycopg2.connect(
+  database="db_sql_task",
+  user="myuser",
+  password="1111",
+  host="localhost",
+  port="5432"
+)
+
+cur = con.cursor()
+
+cur.execute("""create table dates_table (
+    id serial primary key,
+    datetask date
+)""")
+
+
+cur.execute("""create table tasks_table (
+    id serial primary key,
+    name varchar(20),
+    id_date int references dates_table(id)
+)""")
+
+con.commit()
+con.close()
