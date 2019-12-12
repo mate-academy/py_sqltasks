@@ -26,5 +26,3 @@ def test_delete():
     tasks.delete_task(datetime.date(2020, 4, 1), 0)
     with pytest.raises(KeyError):
         tasks.get_task(datetime.date(2020, 4, 1), 0)
-
-
