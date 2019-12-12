@@ -16,11 +16,11 @@ if __name__ == "__main__":
             add_task(con, date(2020, 4, 1), "Go to sleep")
             print(list_tasks(con, date(2020, 4, 1)))
 
-            print(get_task(con, date(2020, 4, 1), 47))
-            edit_task(con, date(2020, 4, 1), 47, 'Wake up slowly')
-            print(get_task(con, date(2020, 4, 1), 47))
+            print(get_task(con, date(2020, 4, 1), 1))
+            edit_task(con, date(2020, 4, 1), 1, 'Wake up slowly')
+            print(get_task(con, date(2020, 4, 1), 1))
 
-            delete_task(con, date(2020, 4, 1), 47)
+            delete_task(con, date(2020, 4, 1), 1)
             print(list_tasks(con, date(2020, 4, 1)))
 
             con.commit()

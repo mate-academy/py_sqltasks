@@ -8,8 +8,9 @@ if __name__ == "__main__":
     with con.cursor() as cursor:
         try:
             clear_tables(cursor)
-            #drop_tables(cursor)
+            drop_tables(cursor)
             con.commit()
         finally:
             if con:
                 con.close()
+

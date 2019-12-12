@@ -1,0 +1,15 @@
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (1, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (2, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (3, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (4, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (5, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (6, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (7, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (8, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (9, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (10, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (11, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (12, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (13, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (14, 1, 'Wake up');
+INSERT INTO Tasks(Id, DateID, TaskName) VALUES (15, 1, 'Wake up');

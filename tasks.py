@@ -63,10 +63,10 @@ def get_task(con, task_date: date, index: int) -> str:
     return result[0]
 
 
-# why we need use here task_date: date parameter?
 def edit_task(con, task_date: date, index: int, new_task: str) -> None:
     """
     Update task in db.
+    :param con: str
     :param task_date: date
     :param index: int
     :param new_task: str
