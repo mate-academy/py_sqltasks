@@ -4,7 +4,7 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - pytest
+   #- pytest
   - flake8 tasks
   - pylint tasks
   - mypy --ignore-missing-imports .

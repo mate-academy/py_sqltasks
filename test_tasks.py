@@ -12,7 +12,7 @@ def test_create():
 def test_list():
     tasks.add_task(datetime.date(2020, 4, 1), "Wake up")
     tasks.add_task(datetime.date(2020, 4, 1), "Make coffee")
-    assert tasks.list_task(datetime.date(2020, 4, 1)) == ["Wake up", "Make coffee"]
+    assert tasks.list_tasks(datetime.date(2020, 4, 1)) == ["Wake up", "Make coffee"]
 
 
 def test_update():

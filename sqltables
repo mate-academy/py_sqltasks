@@ -1,0 +1,14 @@
+create table tasks (id_task serial primary key, task varchar(50), date_id references dates(id_date))
+create table dates (id_date serial primary key, date date)
+
+
+
+cursor = connection.cursor()
+cursor.execute("create table dates (id_date serial primary key, date date)")
+connection.commit()
+cursor.close()
+#Tables
+cursor = connection.cursor()
+cursor.execute("create table tasks (id_task serial primary key, task varchar(50), date_id int references dates(id_date))")
+connection.commit()
+cursor.close()
