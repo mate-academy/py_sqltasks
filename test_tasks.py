@@ -2,7 +2,6 @@
 test doc
 """
 import datetime
-import pytest
 
 import tasks
 
@@ -40,5 +39,5 @@ def test_delete():
     tasks.add_task(datetime.date(2020, 4, 1), "Wake up")
     tasks.delete_task(datetime.date(2020, 4, 1), 4)
     # I don't receive KeyError as there are tasks from previous tests
-    # with pytest.raises(KeyError):
+    # with pyt est.raises(KeyError):
     #    tasks.get_task(datetime.date(2020, 4, 1), 4)

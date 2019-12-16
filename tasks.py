@@ -24,7 +24,8 @@ def add_task(date: datetime.date, task: str) -> None:
     cursor.execute("""insert into dates
                     (date) values ('{}')
                     on conflict on constraint
-                    unique_constraint do nothing""".format(date))
+                    unique_constraint 
+                    do nothing""".format(date))
     CONNECT.commit()
     date_id = get_id(date)
     cursor.execute("""insert into tasks (name, date_id)
