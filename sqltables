@@ -1,0 +1,2 @@
+create table tasks (id_task serial primary key, task varchar(50), date_id references dates(id_date))
+create table dates (id_date serial primary key, date date)
