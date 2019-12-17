@@ -6,25 +6,25 @@ import tasks
 
 def test_create():
     tasks.add_task(datetime.date(2020, 4, 1), "Wake up")
-    assert tasks.get_task(datetime.date(2020, 4, 1), 0) == "Wake up"
+    assert tasks.get_task(datetime.date(2020, 4, 1), 1) == "Wake up"
 
 
 def test_list():
-    tasks.add_task(datetime.date(2020, 4, 1), "Wake up")
-    tasks.add_task(datetime.date(2020, 4, 1), "Make coffee")
-    assert tasks.list_task(datetime.date(2020, 4, 1)) == ["Wake up", "Make coffee"]
+    tasks.add_task(datetime.date(2020, 5, 2), "Write story")
+    tasks.add_task(datetime.date(2020, 5, 2), "Make coffee")
+    assert tasks.list_tasks(datetime.date(2020, 5, 2)) == ["Write story",
+                                                           "Make coffee"]
 
 
 def test_update():
-    tasks.add_task(datetime.date(2020, 4, 1), "Wake up")
-    tasks.edit_task(datetime.date(2020, 4, 1), 0, "Make coffee")
-    assert tasks.get_task(datetime.date(2020, 4, 1), 0) == "Make coffee"
+    tasks.add_task(datetime.date(2020, 6, 3), "Open book")
+    tasks.edit_task(datetime.date(2020, 6, 3), 1, "Close book")
+    assert tasks.get_task(datetime.date(2020, 6, 3), 1) == "Close book"
 
 
 def test_delete():
-    tasks.add_task(datetime.date(2020, 4, 1), "Wake up")
-    tasks.delete_task(datetime.date(2020, 4, 1), 0)
+    tasks.delete_task(datetime.date(2020, 4, 1), 1)
     with pytest.raises(KeyError):
-        tasks.get_task(datetime.date(2020, 4, 1), 0)
+        tasks.get_task(datetime.date(2020, 4, 1), 1)
 
 
